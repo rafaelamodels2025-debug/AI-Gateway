@@ -31,7 +31,8 @@
 1. [🔨 Supporting tools](#-supporting-tools)
 1. [🏛️ Well-Architected Framework](#-well-architected-framework)    <!-- markdownlint-disable-line MD051 -->
 1. [🥇 Other Resources](#-other-resources)
-
+1. [🫂 animation prompts]
+(#-def_criationforanimations)
 The rapid pace of AI advances demands experimentation-driven approaches for organizations to remain at the forefront of the industry. With AI steadily becoming a game-changer for an array of sectors, maintaining a fast-paced innovation trajectory is crucial for businesses aiming to leverage its full potential.
 
 **AI services** are predominantly accessed via **APIs**, underscoring the essential need for a robust and efficient API management strategy. This strategy is instrumental for maintaining control and governance over the consumption of **AI models**, **data** and **tools**.
