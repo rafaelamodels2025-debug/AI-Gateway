@@ -1,0 +1,72 @@
+import os
+import shutil
+
+def organizar_pastas(caminho):
+    """
+    Organiza arquivos no caminho especificado em pastas por extensão.
+    
+    Ex: .jpg -> Pasta 'Imagens', .pdf -> Pasta 'Documentos'
+    """
+    extensoes = {
+        'Imagens': ['.jpg', '.jpeg', '.png', '.gif', '.bmp'],
+        'Documentos': ['.pdf', '.docx', '.txt', '.xlsx', '.pptx'],
+        'Videos': ['.mp4', '.avi', '.mov', '.mkv'],
+        'Musicas': ['.mp3', '.wav', '.aac']
+    }
+
+    for arquivo in os.listdir(caminho):
+        arquivo_path = os.path.join(caminho, arquivo)
+        if os.path.isfile(arquivo_path):
+            movido = False
+            for pasta, ext_list in extensoes.items():
+                if any(arquivo.lower().endswith(ext) for ext in ext_list):
+                    destino = os.path.join(caminho, pasta)
+                    os.makedirs(destino, exist_ok=True)
+                    shutil.move(arquivo_path, destino)
+                    movido = True
+                    break
+            if not movido:
+                destino = os.path.join(caminho, 'Outros')
+                os.makedirs(destino, exist_ok=True)
+                shutil.move(arquivo_path, destino)
+
+# Exemplo de uso
+organizar_pastas("C:/Users/Rafaela/Downloads")
+✅ O que essa função faz:
+
+Cria pastas automaticamente com base na extensão do arquivo.
+
+Move arquivos para a pasta correta.
+
+Coloca arquivos desconhecidos em uma pasta Outros.
+
+Não depende de Azure nem de serviços externos.
+
+Perfeita para subir no GitHub como projeto utilitário.
+
+
+Se você quiser, posso criar uma versão ainda mais avançada, que:
+
+Funciona com subpastas recursivamente.
+
+Gera um log de tudo que foi movido.
+
+✅ O que essa função faz:
+
+Cria pastas automaticamente com base na extensão do arquivo.
+
+Move arquivos para a pasta correta.
+
+Coloca arquivos desconhecidos em uma pasta Outros.
+
+Não depende de Azure nem de serviços externos.
+
+Perfeita para subir no GitHub como projeto utilitário.
+
+
+Se você quiser, posso criar uma versão ainda mais avançada, que:
+
+Funciona com subpastas recursivamente.
+
+Gera um log de tudo que foi movido.
+organizar.pyOutrospython organizar.py /caminho).
